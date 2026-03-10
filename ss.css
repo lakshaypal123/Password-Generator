@@ -1,0 +1,238 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f5;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 20px;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.dark-mode-toggle label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: center; /* Centers the panels horizontally */
+    background-color: #ffffff;
+    padding: 20px;
+    width: 100%; /* Takes full width */
+    max-width: 900px; /* Limits max width for large screens */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+/* Left and Right Panels */
+.left-panel, .right-panel {
+    width: 50%; /* Each panel takes up 50% of the container */
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.left-panel {
+    background-color: #f9f9f9; /* Light background for left panel */
+}
+
+.right-panel {
+    background-color: #f9f9f9; /* Same background color for right panel */
+    margin-left: 20px; /* Creates gap between the panels */
+}
+
+/* Change panel background on dark mode */
+body.dark-mode .left-panel,
+body.dark-mode .right-panel {
+    background-color: #44474d; /* Dark background for panels in dark mode */
+}
+
+h1, h2 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+/* Password Generation Options */
+.options label {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+}
+
+.options input[type="number"] {
+    margin-left: 10px;
+    padding: 4px;
+    width: 60px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Password Display */
+.password-display {
+    display: flex;
+    margin-top: 15px;
+}
+
+.password-display input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    outline: none;
+}
+
+.password-display button {
+    margin-left: 8px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Strength Checker */
+.strength-check input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.strength-check button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #00adb5;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.strength-check button:hover {
+    background-color: #00ced1;
+}
+
+/* Strength Indicator */
+.strength-indicator {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.strength-indicator label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.strength-bar {
+    height: 12px;
+    border-radius: 6px;
+    background-color: #ddd;
+    margin-top: 6px;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #2b2e33;
+    color: #b8b8b8;
+}
+
+.container.dark-mode {
+    background-color: #393e46;
+}
+
+.dark-mode .password-display input,
+.dark-mode .strength-check input {
+    background-color: #44474d;
+    color: #f0f0f0;
+}
+
+.dark-mode .strength-bar {
+    background-color: #555;
+}
+
+.dark-mode .options label,
+.dark-mode .strength-indicator label,
+.dark-mode .dark-mode-toggle label {
+    color: #b8b8b8;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .password-display button {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

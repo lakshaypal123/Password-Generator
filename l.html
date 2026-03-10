@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator and Strength Checker</title>
+    <link rel="stylesheet" href="ss.css">
+</head>
+<body>
+    <div class="dark-mode-toggle">
+        <label>Dark Mode</label>
+        <input type="checkbox" id="dark-mode" onclick="toggleDarkMode()">
+    </div>
+
+    <div class="container">
+        <div class="left-panel">
+            <h1>Password Generator</h1>
+            <div class="options">
+                <label>Password Length:
+                    <input type="number" id="length" min="4" max="32" value="12">
+                </label>
+                <label>
+                    <input type="checkbox" id="uppercase" checked> Include Uppercase
+                </label>
+                <label>
+                    <input type="checkbox" id="lowercase" checked> Include Lowercase
+                </label>
+                <label>
+                    <input type="checkbox" id="numbers" checked> Include Numbers
+                </label>
+                <label>
+                    <input type="checkbox" id="symbols"> Include Symbols
+                </label>
+                <button onclick="generatePassword()">Generate Password</button>
+            </div>
+
+            <div class="password-display">
+                <input type="text" id="password" readonly>
+                <button onclick="copyPassword()" id="copy-btn">Copy</button>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <h2>Check Password Strength</h2>
+            <div class="strength-check">
+                <input type="text" id="password-strength-check" placeholder="Enter a password">
+                <button onclick="checkStrength()" id="check-strength-btn">Check Strength</button>
+                <div class="strength-indicator">
+                    <label>Password Strength: <span id="strength-text">-</span></label>
+                    <div class="strength-bar" id="strength-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="sc.js"></script>
+</body>
+</html>
